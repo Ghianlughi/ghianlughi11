@@ -1,0 +1,12 @@
+.navigasi{
+    background-color: rgb(228, 163, 25);
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-family:Roboto;
+    overflow: hidden;
+    list-style-type: none;
+}
+.navigasi li{
+    float: left;
+    margin: 15px;
+}

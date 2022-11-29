@@ -1,0 +1,26 @@
+*{
+    text-decoration: none;
+  }
+  .navigasi{
+      background-color: skyblue;
+      color: aliceblue;
+      font-size: 25px;
+      overflow: hidden;
+      font-weight: bold;
+      list-style-type: none;
+      display: flex;
+      justify-content: end;
+      padding-top: 10px;
+      margin-top: 0px;
+  }
+  .navigasi li{
+      float: left;
+      margin: 15px;
+  }
+  .navigasi>li>a:hover{
+      color: crimson;
+      transition: all.1s ease-in-out;
+  }
+  body{
+    background-color:rgb(171, 217, 248)9 ;
+  }

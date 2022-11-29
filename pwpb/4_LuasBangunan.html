@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Hello, world!</title>
+    <style>
+      body {
+            padding: 25px;
+            background-color: white;
+            color: black;
+            font-size: 15px;
+      }
+
+      .dark-mode {
+            background-color: black;
+            color: white;
+      }
+    </style>
+  </head>
+  <body>  
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">HITUNG LUAS</a>
+      </div>
+    </nav>
+    <br>
+    <br>
+    <div class="container" style="border-radius: 15px; border: 2px solid rgb(28, 28, 219)">
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-10 col-form-label">Luas Persegi</label>
+      </div>
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Panjang:</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="s" placeholder="Masukan Sisi">
+        </div>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3" onclick="persegi()">Hitung</button>
+      </div>
+      <div class="col-auto">
+        <button type="button" class="btn btn-light"><label id="hasilpersegi">Jawaban</button></label>
+      </div>
+      <hr>
+    </div>
+    <br>
+    <br>
+    <div class="container" style="border-radius: 15px; border: 2px solid rgb(28, 28, 219)">
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-10 col-form-label">Luas Persegi Panjang</label>
+      </div>
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Panjang:</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="p" placeholder="Masukan Panjang">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Luas:</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="l" placeholder="Masukan Lebar">
+        </div>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3" onclick="persegi_panjang()">Hitung</button>
+      </div>
+      <div class="col-auto">
+        <button type="button" class="btn btn-light"><label id="hasilpersegipanjang">Jawaban</button></label>
+      </div>
+      <hr>
+    </div>
+    <br>
+    <br>
+    <div class="container" style="border-radius: 15px; border: 2px solid rgb(28, 28, 219)">
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-10 col-form-label">Luas Segitiga</label>
+      </div>
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Panjang:</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="a" placeholder="Masukan Alas">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Luas:</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="t" placeholder="Masukan Tinggi">
+        </div>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3" onclick="segitiga()">Hitung</button>
+      </div>
+      <div class="col-auto">
+        <button type="button" class="btn btn-light"><label id="hasilsegitiga">Jawaban</button></label>
+      </div>
+      <hr>
+    </div>
+    <br>
+    <br>
+    <div class="container" style="border-radius: 15px; border: 2px solid rgb(28, 28, 219)">
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-10 col-form-label">Luas Lingkaran</label>
+      </div>
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Panjang:</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="r" placeholder="Masukan Jari-Jari">
+        </div>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3" onclick="lingkaran()">Hitung</button>
+      </div>
+      <div class="col-auto">
+        <button type="button" class="btn btn-light"><label id="hasillingkaran">Jawaban</button></label>
+      </div>
+      <hr>
+    </div>
+    <br>
+    <br>
+    <div class="d-flex pading-top">
+      <button type="button" class="btn btn-danger" onclick="myFunction()">Change Theme</button>
+    </div>
+    <script>
+      function persegi() {
+        var sisi = parseInt(document.getElementById("s").value);
+        let Luas = sisi * sisi;
+        let hasil = document.getElementById("hasilpersegi");
+        hasil.innerHTML = Luas
+      }
+
+      function persegi_panjang() {
+        var panjang = parseInt(document.getElementById("p").value);
+        var lebar = parseInt(document.getElementById("l").value);
+        let Luas = panjang * lebar;
+        let hasil = document.getElementById("hasilpersegipanjang");
+        hasil.innerHTML = Luas
+      }
+
+      function lingkaran() {
+        var jari = parseInt(document.getElementById('r').value);
+        let luas = Math.PI * Math.pow(jari, 2);
+        let hasilluas = document.getElementById('hasillingkaran');
+        hasilluas.innerHTML = luas;
+      }
+
+      function segitiga() {
+        var nilaia = parseInt(document.getElementById("a").value);
+        var nilaib = parseInt(document.getElementById("t").value);
+        let Luas = 0.5 * nilaia * nilaib;
+        let hasil = document.getElementById("hasilsegitiga");
+        hasil.innerHTML = Luas
+      }
+
+      function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

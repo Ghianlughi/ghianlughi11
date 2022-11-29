@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keranjang belanja</title>
+  </head>
+  <body>
+    mangga <input type="number" id="mangga" /> <br />
+    jeruk <input type="number" id="jeruk" /> <br />
+    duren <input type="number" id="duren" /> <br />
+    apel <input type="number" id="apel" /> <br />
+    diskon <input type="number" id="diskon" /> <br />
+    <button onclick="cek()">cek</button>
+    <h1 id="total_harga">Total Harga</h1>
+    <h1 id="total_diskon">Total Dikson</h1>
+    <h1 id="total_bayar">Total Bayar</h1>
+    <script>
+      function cek() {
+        var mangga = document.getElementById("mangga").value;
+        var jeruk = document.getElementById("jeruk").value;
+        var durian = document.getElementById("duren").value;
+        var pepaya = document.getElementById("apel").value;
+        var diskon = document.getElementById("diskon").value;
+        var totalharga = document.getElementById("totalharga");
+        var hargasemua = mangga * 2000 + jeruk * 3000 + duren * 30000 + apel * 2000;
+        totalharga.innerHTML = "TotalHarga : Rp. " + hargasemua;
+        var totaldiskon = document.getElementById("totaldiskon");
+        totaldiskon.innerHTML = "Diskon : " + diskon + "%";
+        var totalbayar = document.getElementById("totalbayar");
+        var hargabayar = hargasemua - (hargasemua * diskon) / 100;
+        totalbayar.innerHTML = "Rp." + hargabayar;
+      }
+    </script>
+  </body>
+</html>
